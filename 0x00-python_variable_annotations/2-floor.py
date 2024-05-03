@@ -6,6 +6,6 @@ import math
 
 def floor(n: float) -> int:
     """
-    A fucntion that returns  floor of a float
+    returns the floor of a float
     """
     return math.floor(n)
