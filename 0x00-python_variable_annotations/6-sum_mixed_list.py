@@ -6,7 +6,7 @@ from typing import Union
 
 
 def sum_mixed_list(mxd_lst: list[Union[int, float]]) -> float:
-  rt: float = 0.0
-  for i in mxd_lst:
-    rt += i
-  return rt
+  """
+    returns their sum as a float.
+    """
+  return float(sum(mxd_lst))
