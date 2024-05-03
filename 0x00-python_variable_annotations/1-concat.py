@@ -10,4 +10,4 @@ def concat(str1: str, str2: str) -> str:
     """
     # concate: str = str1 + str2
     res: str = "".join([str1, str2])
-    return concate
+    return res
