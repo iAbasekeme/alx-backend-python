@@ -1,0 +1,1 @@
+In this directory we will be practicin on python variable annotations
