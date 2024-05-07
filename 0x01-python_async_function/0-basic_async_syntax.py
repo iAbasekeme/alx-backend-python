@@ -2,7 +2,6 @@
 """
 A module tat implements coroutines
 """
-__all__ = ['wait_random']
 import random
 import asyncio
 
