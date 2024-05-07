@@ -13,10 +13,12 @@ async def wait_n(n: int, max_delay: int) -> List[float]:
     A function that execute multiple coroutines
     at the same time with async
     """
-    result = []
-    delays = [await wait_random(max_delay) for _ in range(n)]
+    tasks = []
+    delays = []
+    for _ in range(n):
+        tasks.append(wait_random(max_delay))
 
-    for delay in asyncio.as_completed(delays):
-        result.append(await delay)
+    for delay in asyncio.as_completed(tasks):
+        delays.append(await delay)
 
-    return result
+    return delays
