@@ -1,4 +1,4 @@
-#!/usr/bin/env python30-async_generator.py
+#!/usr/bin/env python3
 """
 A module that implements async generators
 """
