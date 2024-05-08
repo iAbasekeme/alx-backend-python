@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python30-async_generator.py
 """
 A module tat implements coroutines
 """
