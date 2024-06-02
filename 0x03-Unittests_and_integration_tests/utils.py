@@ -73,24 +73,3 @@ def memoize(fn: Callable) -> Callable:
         return getattr(self, attr_name)
 
     return property(memoized)
-
-
-nested_map = {"a": {"b": {"c": 1}}, "d": 2, "e": [1, 2, {"f": 3}]}
-
-# Accessing value at path "a", "b", "c"
-value_1 = access_nested_map(nested_map, ["a", "b", "c"])
-print(value_1)  # Output: 1
-
-# Accessing value at path "d" (directly in the top level)
-value_2 = access_nested_map(nested_map, ["d"])
-print(value_2)  # Output: 2
-
-# Trying an invalid path (key "x" doesn't exist)
-try:
-    value_3 = access_nested_map(nested_map, ["x", "y", "z"])
-except KeyError as e:
-    print(f"Error: {e}")  # Output: Error: 'x'
-
-# Accessing a value within a list (path "e", index 2, key "f")
-value_4 = access_nested_map(nested_map, ["e", 2, "f"])
-print(value_4)  # Output: 3
