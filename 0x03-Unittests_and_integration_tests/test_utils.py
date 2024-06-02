@@ -2,6 +2,7 @@
 """A unitests module
 """
 import unittest
+import requests
 from typing import Dict, Tuple, Union
 from unittest.mock import patch, Mock
 from parameterized import parameterized
@@ -26,7 +27,7 @@ class TestAccessNestedMap(unittest.TestCase):
         self.assertEqual(access_nested_map(nested_map, path), expected)
 
     @parameterized.expand({
-        ({}, ("a",))
+        ({}, ("a",)),
         ({"a": 1}, ("a", "b"))
     })
     def test_access_nested_map_exception(self, nested_map, path):
