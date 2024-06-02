@@ -4,13 +4,22 @@
 import unittest
 from parameterized import parameterized
 
+from utils import (
+    access_nested_map,
+    get_json,
+    memoize,
+)
+
 class TestAccessNestedMap(unittest.TestCase):
     """A unitests class 
     """
     @parameterized.expand([
-        nested_map={"a": 1}, path=("a",)
-        nested_map={"a": {"b": 2}}, path=("a",)
-        nested_map={"a": {"b": 2}}, path=("a", "b")
+        ({"a": 1}, ("a",)),
+        ({"a": {"b": 2}}, ("a",)),
+        ({"a": {"b": 2}}, ("a", "b")),
     ])
-    def test_access_nested_map(self, nested_map, path):
-        self.assertEqual(TestAccessNestedMap(nested_map, path), path[-1])
+    def test_access_nested_map(self, *args):
+        """A method that performs unittest
+        """
+        nested_map, path = args
+        self.assertEqual(test_access_nested_map(nested_map, path), nested_map[path[-1]])
