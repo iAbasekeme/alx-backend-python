@@ -11,7 +11,7 @@ from utils import (
 )
 
 class TestAccessNestedMap(unittest.TestCase):
-    """A unitests class 
+    """A unitests class
     """
     @parameterized.expand([
         ({"a": 1}, ("a",), 1),
@@ -22,3 +22,12 @@ class TestAccessNestedMap(unittest.TestCase):
         """A method that performs unittest
         """
         self.assertEqual(access_nested_map(nested_map, path), expected)
+
+    @parameterized.expand({
+        ({}, ("a",))
+        ({"a": 1}, ("a", "b"))
+    })
+    def test_access_nested_map_exception(self, nested_map, path):
+        """ Error test"""
+        with self.assertRaises(KeyError):
+            access_nested_map(nested_map, path)
